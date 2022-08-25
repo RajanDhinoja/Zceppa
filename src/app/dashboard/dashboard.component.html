@@ -1,0 +1,36 @@
+<div class="dashboard">
+  <mat-tab-group animationDuration="150ms" [selectedIndex]="activeTab">
+    <mat-tab label="Trending News">
+      <mat-card *ngFor="let article of articles; let i = index">
+        <mat-card-content>
+          <div *ngIf="i%2==0" class="d-flex">
+            <div class="text-container">
+              <mat-card-title>{{ article.title }}</mat-card-title>
+              <mat-card-subtitle>News By: {{ article.source.name }}</mat-card-subtitle>
+              <p>{{ article.description }}</p>
+              <span>Read more at <strong>{{ article.source.name }}</strong></span>
+            </div>
+            <div class="img-container">
+              <img *ngIf="article.urlToImage" class="img-style" [src]="article?.urlToImage">
+            </div>
+          </div>
+
+          <div *ngIf="i%2!=0" class="d-flex">
+            <div class="img-container">
+              <img *ngIf="article.urlToImage" class="img-style" [src]="article?.urlToImage">
+            </div>
+            <div class="text-container">
+              <mat-card-title>{{ article.title }}</mat-card-title>
+              <mat-card-subtitle>News By: {{ article.source.name }}</mat-card-subtitle>
+              <p>{{ article.description }}</p>
+              <span>Read more at <strong>{{ article.source.name }}</strong></span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="Algorithm Test">Algorithm Test</mat-tab>
+    <mat-tab label="Favorite Tab">This is tab only for reference.</mat-tab>
+    <mat-tab label="Other Tab">This is tab only for reference.</mat-tab>
+  </mat-tab-group>
+</div>
