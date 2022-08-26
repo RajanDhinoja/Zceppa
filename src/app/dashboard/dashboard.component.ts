@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
     // please open the console for the output
 
     let startTime = '15:15:00';
-    let endTime = '15:15:12';
+    let endTime = '18:15:12';
     this.calculateInterestingPoints(startTime, endTime);
     console.log('interestingTime', this.interestingTime);
     console.log('count', this.res);
@@ -46,9 +46,9 @@ export class DashboardComponent implements OnInit {
     let j = parseInt(m1);
     let k = parseInt(s1);
 
-    for (let a = 0; a < 24; a++) {
-      for (let b = 0; b < 60; b++) {
-        for (let c = 0; c < 60; c++) {
+    for (;;) {
+      for (;;) {
+        for (;;) {
           if (
             (i >= parseInt(h2) && j > parseInt(m2)) ||
             (i >= parseInt(h2) && j >= parseInt(m2) && k > parseInt(s2)) ||
@@ -99,10 +99,7 @@ export class DashboardComponent implements OnInit {
           }
         }
 
-        if (flag1) {
-          break;
-        }
-        if (i >= parseInt(h2) && j > parseInt(m2)) {
+        if (flag1 || (i >= parseInt(h2) && j > parseInt(m2))) {
           flag1 = true;
           break;
         }
@@ -113,10 +110,7 @@ export class DashboardComponent implements OnInit {
           j++;
         }
       }
-      if (flag1) {
-        break;
-      }
-      if (i > parseInt(h2)) {
+      if (flag1 || i > parseInt(h2)) {
         break;
       }
       if (i == 24) {
