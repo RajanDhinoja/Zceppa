@@ -119,7 +119,6 @@ export class DashboardComponent implements OnInit {
         i++;
       }
     }
-    return this.res;
   }
 
   calculateDistinct(time: string) {
